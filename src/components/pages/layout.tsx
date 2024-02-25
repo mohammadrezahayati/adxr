@@ -1,8 +1,9 @@
 'use client';
 import { Inter, Rubik } from 'next/font/google';
 import { useEffect, useState, type FC } from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
+import {
+  RecoilRoot
+} from 'recoil';
 import { themeChange } from 'theme-change';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const rubic = Rubik({ subsets: ['arabic'], variable: '--font-rubic' });
@@ -12,9 +13,8 @@ interface layoutProps {
 }
 
 const Root: FC<layoutProps> = ({ children }) => {
-  const queryClient = new QueryClient();
-  const lang = localStorage.getItem('lang')
-  const  [langState , setLangState] = useState()
+  const lang = localStorage.getItem('lang');
+  const [langState, setLangState] = useState();
   useEffect(() => {
     themeChange(false);
     // 👆 false parameter is required for react project
@@ -27,10 +27,7 @@ const Root: FC<layoutProps> = ({ children }) => {
       dir={'rtl'}
     >
       <body>
-        <QueryClientProvider client={queryClient}>
-          {children}
-          <ReactQueryDevtools initialIsOpen={false} />
-        </QueryClientProvider>
+        <RecoilRoot>{children}</RecoilRoot>
       </body>
     </html>
   );
