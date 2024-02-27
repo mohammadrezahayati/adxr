@@ -12,13 +12,11 @@ interface layoutProps {
 }
 type dirType = 'rtl' | 'ltr';
 const Root: FC<layoutProps> = ({ children }) => {
-  const lang = localStorage.getItem('lang');
-  const dir = localStorage.getItem('direction') ?? 'ltr';
   const [langState, setLangState] = useState();
   const [dirState, setDirState] = useState<dirType>('ltr');
   useEffect(() => {
     themeChange(false);
-    // 👆 false parameter is required for react project
+    setDirState(localStorage.getItem('direction') as dirType);
   }, []);
   useEffect(() => {
     const handleStorage = () => {
@@ -30,7 +28,11 @@ const Root: FC<layoutProps> = ({ children }) => {
     return () => window.removeEventListener('storage', handleStorage() as any);
   }, []);
   return (
-    <html lang="en" className={`${inter.variable} ${rubic.variable}`} dir={dir}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${rubic.variable}`}
+      dir={dirState}
+    >
       <body>
         <RecoilRoot>{children}</RecoilRoot>
       </body>
