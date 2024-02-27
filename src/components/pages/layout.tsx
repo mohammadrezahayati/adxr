@@ -15,16 +15,13 @@ const Root: FC<layoutProps> = ({ children }) => {
  
   
   const [langState, setLangState] = useState();
-  const [dirState, setDirState] = useState<dirType>('ltr');
   const [dir, setDir] = useState<dirType>('ltr');
   useEffect(() => {
     themeChange(false);
-    setDir(localStorage.getItem('direction') as dirType);
   }, []);
   useEffect(() => {
     const handleStorage = () => {
-      const dir = localStorage.getItem('direction');
-      return setDirState(dir as dirType);
+      return setDir(localStorage.getItem('direction') as dirType);
     };
 
     window.addEventListener('storage', handleStorage() as any);
