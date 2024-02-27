@@ -7,7 +7,7 @@ const Sidebar: FC<sidebarProps> = ({}) => {
     <>
       <aside
         id="separator-sidebar"
-        className="fixed top-28 slider ltr:left-5 rtl:right-5 z-40 w-64 h-screen transition-transform  lg:translate-x-0 bg-base-300"
+        className="fixed top-28 slider ltr:left-5 rtl:right-5 z-40 w-64 h-screen transition-transform lg:translate-x-0 bg-base-300"
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-4 overflow-y-auto">

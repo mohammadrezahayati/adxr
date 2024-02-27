@@ -1,10 +1,17 @@
+import { setDirection } from '@/utils/direction';
+import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 import { AiOutlineTranslation } from 'react-icons/ai';
 
 interface langToggleProps {}
+interface CountryType {
+  name: string;
+  flag: string;
+  dir: 'rtl' | 'ltr';
+}
 const LangToggle: FC<langToggleProps> = ({}) => {
-  const Countries = [
+  const Countries: CountryType[] = [
     {
       name: 'USA',
       flag: '/image/flag/usa.png',
@@ -33,10 +40,18 @@ const LangToggle: FC<langToggleProps> = ({}) => {
               className="flex flex-row justify-start align-center gap-3 w-100"
               key={item.name}
             >
-              <Link style={{ width: '100%' }} href={'#'}>
-                <img src={item.flag} />
+              <button
+                onClick={() => setDirection(item.dir)}
+                style={{ width: '100%' }}
+              >
+                <Image
+                  src={item.flag}
+                  alt={'countries'}
+                  width={28}
+                  height={15}
+                />
                 <span>{item.name}</span>
-              </Link>
+              </button>
             </li>
           );
         })}
