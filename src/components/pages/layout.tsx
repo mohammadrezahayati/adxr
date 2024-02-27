@@ -28,7 +28,7 @@ const Root: FC<layoutProps> = ({ children }) => {
     return () => window.removeEventListener('storage', handleStorage() as any);
   }, []);
   return (
-    <html lang="en" className={`${inter.variable} ${rubic.variable}`} dir={dir}>
+    <html lang="en" className={`${inter.variable} ${rubic.variable}`} dir={dir ?? "ltr"}>
       <body>
         <RecoilRoot>{children}</RecoilRoot>
       </body>
