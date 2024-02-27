@@ -10,24 +10,24 @@ const rubic = Rubik({ subsets: ['arabic'], variable: '--font-rubic' });
 interface layoutProps {
   children: React.ReactNode;
 }
-
+type dirType = 'rtl' | 'ltr';
 const Root: FC<layoutProps> = ({ children }) => {
   const lang = localStorage.getItem('lang');
   const dir = localStorage.getItem('direction') ?? 'ltr';
   const [langState, setLangState] = useState();
-  const [dirState, setDirState] = useState<'rtl' | 'ltr'>('ltr');
+  const [dirState, setDirState] = useState<dirType>('ltr');
   useEffect(() => {
     themeChange(false);
     // 👆 false parameter is required for react project
   }, []);
   useEffect(() => {
     const handleStorage = () => {
-      const dir = localStorage.getItem('direction') ?? "ltr";
-      return setDirState(dir);
+      const dir = localStorage.getItem('direction');
+      return setDirState(dir as dirType);
     };
 
-    window.addEventListener('storage', handleStorage());
-    return () => window.removeEventListener('storage', handleStorage());
+    window.addEventListener('storage', handleStorage() as any);
+    return () => window.removeEventListener('storage', handleStorage() as any);
   }, []);
   return (
     <html lang="en" className={`${inter.variable} ${rubic.variable}`} dir={dir}>
