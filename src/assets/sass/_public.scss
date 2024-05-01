@@ -1,0 +1,122 @@
+.containerStyle {
+  height: calc(100dvh - 9dvh) !important;
+}
+
+[data-theme='light'] {
+  ::-webkit-scrollbar {
+    width: 5px;
+    // &-track {
+    //   background: #f1f1f1;
+    // }
+
+    &-thumb {
+      background: #888;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+
+      &:hover {
+        background: #555;
+      }
+    }
+  }
+}
+[data-theme='dark'] {
+  ::-webkit-scrollbar {
+    width: 5px;
+    // &-track {
+    //   background: #f1f1f1;
+    // }
+
+    &-thumb {
+      background: #888;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+
+      &:hover {
+        background: #555;
+      }
+    }
+  }
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chartTotalSales {
+  filter: drop-shadow(1px 5px 11px #1bc4fb);
+  color: #1bc4fb;
+  font-weight: 700;
+  span {
+    font-size: 3rem;
+  }
+  @media #{$xs-layout} {
+    span {
+      font-size: 2rem;
+    }
+  }
+}
+.chartTotalProfit {
+  filter: drop-shadow(1px 5px 11px #e6c446);
+  color: #e6c446;
+  font-weight: 700;
+  span {
+    font-size: 3rem;
+  }
+  @media #{$xs-layout} {
+    span {
+      font-size: 2rem;
+    }
+  }
+}
+.chartAllOrder {
+  filter: drop-shadow(1px 5px 11px #fa76ff);
+  color: #fa76ff;
+  font-weight: 700;
+  span {
+    font-size: 3rem;
+  }
+  @media #{$xs-layout} {
+    span {
+      font-size: 2rem;
+    }
+  }
+}
+
+.drawer {
+  z-index: 1;
+}
+.analyticsIconStyle {
+  filter: drop-shadow(1px 5px 11px #1bc4fb);
+  color: #1bc4fb;
+  font-weight: 700;
+}
+.analyticsIconUserStyle {
+  filter: drop-shadow(1px 5px 11px #1bfbc3);
+  color: #1bfbc3;
+  font-weight: 700;
+}
+.analyticsIconProductStyle {
+  filter: drop-shadow(1px 5px 11px #fbb41b);
+  color: #fbb41b;
+  font-weight: 700;
+}
+.analyticsIconAnalyticsStyle {
+  filter: drop-shadow(1px 5px 11px #961bfb);
+  color: #961bfb;
+  font-weight: 700;
+}
+.analyticsIconChartStyle {
+  filter: drop-shadow(1px 5px 11px #1bfb2e);
+  color: #1bfb2e;
+  font-weight: 700;
+}
+.glassy-background {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}

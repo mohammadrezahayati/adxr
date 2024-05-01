@@ -15,10 +15,43 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require('daisyui'),
+  ],
   daisyui: {
-    themes: ["light", "dark"], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
-    //darkTheme: "dark", // name of one of the included themes for dark mode
+    themes: [
+      {
+        dark: {
+          ...require("daisyui/src/theming/themes")["dark"],
+          '.bg-base-400': {
+            "background-color": "#1D232A"
+          },
+          '.bg-base-500': {
+            "background": "rgba(0, 0, 0, 0.35)",
+            'box-shadow': "0 4px 30px rgba(0, 0, 0, 0.1)",
+            " backdrop-filter": "blur(7.1px)",
+            "-webkit-backdrop-filter": "blur(7.1px)",
+            "border": "1px solid rgba(0, 0, 0, 0.3)",
+          },
+        },
+      },
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["light"],
+          '.bg-base-400': {
+            "background-color": "#FFFFFF",
+          },
+          '.bg-base-500': {
+            "background": "rgba(255, 255, 255, 0.35)",
+            'box-shadow': "0 4px 30px rgba(0, 0, 0, 0.1)",
+            " backdrop-filter": "blur(7.1px)",
+            "-webkit-backdrop-filter": "blur(7.1px)",
+            "border": "1px solid rgba(255, 255, 255, 0.3)",
+          },
+        },
+      },
+    ], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
+    darkTheme: "dark", // name of one of the included themes for dark mode
     base: true, // applies background color and foreground color for root element by default
     styled: true, // include daisyUI colors and design decisions for all components
     utils: true, // adds responsive and modifier utility classes
