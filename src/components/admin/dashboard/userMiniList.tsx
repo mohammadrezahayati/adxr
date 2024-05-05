@@ -1,7 +1,6 @@
-import generateRandomColor from '@/util/randonColor';
+import { faker } from '@faker-js/faker';
 import type { FC } from 'react';
 import { FaLink } from 'react-icons/fa6';
-import { faker } from '@faker-js/faker';
 interface UserType {
   name: string;
   number: string;

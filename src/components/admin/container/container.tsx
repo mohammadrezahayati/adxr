@@ -1,12 +1,18 @@
-import type { FC } from 'react';
+import { useEffect, type FC } from 'react';
 import Menu from './menu';
 import Navbar from './navbar';
-
+import { themeChange } from 'theme-change';
+import Information from './information';
 interface containerProps {
   children: React.ReactNode;
+  search?: boolean;
+  breadcrumb?: boolean;
 }
 
-const container: FC<containerProps> = ({ children }) => {
+const Container: FC<containerProps> = ({ children, search, breadcrumb }) => {
+  useEffect(() => {
+    themeChange(false);
+  }, []);
   return (
     <div className='h-dvh w-full fixed'>
       <div className='w-full h-auto'>
@@ -17,10 +23,11 @@ const container: FC<containerProps> = ({ children }) => {
           <Menu />
         </div>
         <div className='grow h-full bg-base-300 rounded-box p-4 overflow-x-hidden overflow-y-scroll'>
+          {(breadcrumb || search) && <Information search={search} />}
           {children}
         </div>
       </div>
     </div>
   );
 };
-export default container;
+export default Container;

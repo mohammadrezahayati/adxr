@@ -31,24 +31,24 @@ interface productMiniListProps {}
 
 const ProductMiniList: FC<productMiniListProps> = ({}) => {
   return (
-    <div className='flex justify-start flex-col align-items-start overflow-scroll gap-3'>
+    <div className='flex justify-start flex-col align-items-start gap-3'>
       {Products.map((item, idx) => {
         return (
           <div
-            className='flex justify-between align-items-center min-w-96'
+            className='flex justify-between align-items-center min-w-96 gap-4'
             key={idx}>
             <div className='avatar flexCenter'>
               <div className='w-10 rounded-full'>
                 <img src={item.image} alt={item.name} />
               </div>
             </div>
-            <span className='flexCenter text-base-content w-full'>
+            <span className='productMiniListItem text-base-content w-full'>
               {item.name}
             </span>
-            <span className='flexCenter text-base-content w-full'>
+            <span className='productMiniListItem text-base-content w-full'>
               {item.count}
             </span>
-            <span className='flexCenter text-base-content w-full'>
+            <span className='productMiniListItem text-base-content w-full'>
               ${item.profit}
             </span>
             <button className='btn btn-primary'>

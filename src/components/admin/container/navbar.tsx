@@ -1,6 +1,6 @@
 import { useState, type FC } from 'react';
 import Drawer from './drawer';
-import { setDir } from '@/util/getDirection';
+import { setDir } from 'src/util';
 
 interface navbarProps {}
 
@@ -12,7 +12,7 @@ const Navbar: FC<navbarProps> = ({}) => {
         <span className='block lg:hidden'>
           <Drawer />
         </span>
-        <a className='btn btn-ghost text-xl text-base-content'>ADXR</a>
+        <a className='btn btn-ghost text-xl text-base-content'>ARH</a>
       </div>
       <div className='flex-none gap-2'>
         <div className='dropdown dropdown-end'>

@@ -1,19 +1,19 @@
 import { ColorType, createChart } from 'lightweight-charts';
-import { useEffect, useRef, type FC } from 'react';
+import { useEffect, useRef, useState, type FC } from 'react';
 import { FaChartSimple, FaUserGroup } from 'react-icons/fa6';
 
+import Review from './review';
 import UserMiniList from './userMiniList';
 
 interface mainChartProps {}
 
 const MainChart: FC<mainChartProps> = ({}) => {
   const chartContainerRef = useRef();
-  //   const theme = localStorage && localStorage.getItem("theme")
+  const [theme, setTheme] = useState<any>();
   const colors = {
     backgroundColor: 'transparent',
     lineColor: '#29cdff',
-    // textColor:  theme === 'light' ? "black" : 'white',
-    textColor: 'white',
+    textColor: theme === 'light' ? 'black' : 'white',
     areaTopColor: '#29cdff',
     areaBottomColor: 'rgba(41, 205, 255, 0.28)',
   };
@@ -30,6 +30,9 @@ const MainChart: FC<mainChartProps> = ({}) => {
     { time: '2018-12-31', value: 22.67 },
   ];
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setTheme(localStorage.getItem('theme'));
+    }
     const handleResize = () => {
       chart.applyOptions({ width: chartContainerRef.current.clientWidth });
     };
@@ -77,7 +80,7 @@ const MainChart: FC<mainChartProps> = ({}) => {
         </div>
         <div className={'mt-4'}>
           <div
-            className='w-full bg-black/10 rounded-md p-4 z-0'
+            className='w-full rounded-md p-4 z-0'
             accordion-body
             ref={chartContainerRef}></div>
         </div>
@@ -94,25 +97,7 @@ const MainChart: FC<mainChartProps> = ({}) => {
           <UserMiniList />
         </div>
       </div>
-      <div className='stats stats-vertical shadow w-full lg:w-1/6 '>
-        <div className='stat'>
-          <div className='stat-title'>Downloads</div>
-          <div className='stat-value'>31K</div>
-          <div className='stat-desc'>Jan 1st - Feb 1st</div>
-        </div>
-
-        <div className='stat'>
-          <div className='stat-title'>New Users</div>
-          <div className='stat-value'>4,200</div>
-          <div className='stat-desc'>↗︎ 400 (22%)</div>
-        </div>
-
-        <div className='stat'>
-          <div className='stat-title'>New Registers</div>
-          <div className='stat-value'>1,200</div>
-          <div className='stat-desc'>↘︎ 90 (14%)</div>
-        </div>
-      </div>
+      <Review />
     </div>
   );
 };

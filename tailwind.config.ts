@@ -23,6 +23,7 @@ const config: Config = {
       {
         dark: {
           ...require("daisyui/src/theming/themes")["dark"],
+          "primary": "#1bc4fb",
           '.bg-base-400': {
             "background-color": "#1D232A"
           },
@@ -38,6 +39,7 @@ const config: Config = {
       {
         light: {
           ...require("daisyui/src/theming/themes")["light"],
+          "primary": "#1bc4fb",
           '.bg-base-400': {
             "background-color": "#FFFFFF",
           },

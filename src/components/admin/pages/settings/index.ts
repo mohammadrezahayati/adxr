@@ -1,0 +1,6 @@
+export * from "./aboutUsPage"
+export * from "./contactUsPage"
+export * from "./policyPage"
+export * from "./qaAddPage"
+export * from "./qaEditPage"
+export * from "./qaListPage"
