@@ -3,6 +3,19 @@
 
 A fully customizable and fully responsive admin panel created by tailwind + nextjs
 
+# How To Use
+
+Just clone it and install dependencies
+
+```
+git clone https://github.com/mohammadrezahayati/adxr.git
+```
+```
+yarn install or npm install
+```
+```
+yarn dev or npm run dev
+```
 
 
 # Support
