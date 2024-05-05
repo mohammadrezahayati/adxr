@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# ADXR (Nextjs 14 - admin panel)
 
-First, run the development server:
+A fully customizable and fully responsive admin panel created by tailwind + nextjs 14
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+
+# Support
+
+This panel has RTL - LTR support that you can add every language you want.
+
 ```
+{
+     direction : RTL-LTR
+     theme : Dark-Light
+}
+ ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Every thing is ready for you baby let's try! 😊😎
+## Screenshots
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![Dashboard](https://beeimg.com/images/r93982358562.png)
 
-## Learn More
+![Dashboard Light](https://beeimg.com/images/h69487688303.png)
 
-To learn more about Next.js, take a look at the following resources:
+![Admin List](https://beeimg.com/images/m46836555624.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Admin Add & Edit](https://beeimg.com/images/y57135415632.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![Payment & OTP & Bag](https://beeimg.com/images/y83042296153.png)
 
-## Deploy on Vercel
+![Payment & OTP & Bag light](https://beeimg.com/images/u23968185054.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Uploader](https://beeimg.com/images/o54704735972.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+This is just beginning wait for more 😎✌️🧡
