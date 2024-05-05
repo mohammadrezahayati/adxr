@@ -12,7 +12,7 @@ const Navbar: FC<navbarProps> = ({}) => {
         <span className='block lg:hidden'>
           <Drawer />
         </span>
-        <a className='btn btn-ghost text-xl text-base-content'>ARH</a>
+        <a className='btn btn-ghost text-xl text-base-content'>ADXR</a>
       </div>
       <div className='flex-none gap-2'>
         <div className='dropdown dropdown-end'>
